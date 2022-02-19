@@ -18,25 +18,26 @@ export function renderCars(car) {
     return a;
 }
 
-export function renderCarDetails(id) {
+export function renderCarDetails(car) {
     const div = document.createElement('div');
     const brandEl = document.createElement('p');
     const modelEl = document.createElement('p');
     const yearEl = document.createElement('p');
+    const img = document.createElement('img');
 
-    div.classList.add('car-lists-container');
+    div.classList.add('car-info-container');
 
-    brandEl.textContent = id.brand;
+    brandEl.textContent = car.brand;
     brandEl.classList.add('brand');
 
-    modelEl.textContent = id.model;
+    modelEl.textContent = car.model;
     modelEl.classList.add('model');
 
-    yearEl.textContent = id.year;
+    yearEl.textContent = car.year;
     yearEl.classList.add('year');
 
+    img.src = `../assets/${car.id}.jpg`;
 
-    div.append(brandEl, modelEl, yearEl);
-
+    div.append(img, brandEl, modelEl, yearEl);
     return div;
 }
