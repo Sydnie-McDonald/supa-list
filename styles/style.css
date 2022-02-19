@@ -105,27 +105,15 @@ footer {
 
   }
 
-#logout {
-    position: fixed;
-    right: 20px;
-    top: 90px;
+  img {
+    height: 200px;
+
 }
 
-.auth-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+a {
+    color:rgb(255, 255, 255)
 }
 
-.auth-container {
-    margin: 10px;
-}
-
-.auth-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.auth-container button {
-    margin: 10px;
+.main-section {
+    background-color: transparent;
 }
