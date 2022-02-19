@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable space-before-function-paren */
 import { getCar } from '../fetch-utils.js';
 import { renderCarDetails } from '../render.js';
