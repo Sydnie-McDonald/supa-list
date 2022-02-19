@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import { getCars } from './fetch-utils.js';
 import { renderCars } from './render.js';
 
