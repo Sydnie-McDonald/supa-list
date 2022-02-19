@@ -1,10 +1,11 @@
+/* eslint-disable space-before-function-paren */
 import { getCar } from '../fetch-utils.js';
 import { renderCarDetails } from '../render.js';
 
 const carInfoContainer = document.getElementById('car-info-container');
 
 
-window.addEventListener('load', async() => {
+window.addEventListener('load', async () => {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
 
