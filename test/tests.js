@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // IMPORT MODULES under test here:
-import { renderCarDetails } from '..render.js';
+import { renderCarDetails } from '../render.js';
 
 const test = QUnit.test;
 
