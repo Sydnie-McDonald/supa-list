@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Tests</title>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/qunit/qunit-2.9.1.css"
-    />
-  </head>
 
-  <body>
-    <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
-    <script src="https://code.jquery.com/qunit/qunit-2.9.1.js"></script>
-    <script>
-      function storageMock() {
-        var storage = {};
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Tests</title>
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.1.css" />
+</head>
 
-        return {
-          setItem: function (key, value) {
-            storage[key] = value || "";
-          },
-          getItem: function (key) {
-            return key in storage ? storage[key] : null;
-          },
-          removeItem: function (key) {
-            delete storage[key];
-          },
-          get length() {
-            return Object.keys(storage).length;
-          },
-          key: function (i) {
-            var keys = Object.keys(storage);
-            return keys[i] || null;
-          },
-        };
-      }
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.9.1.js"></script>
+  <script>
+    function storageMock() {
+      var storage = {};
 
-      Object.defineProperty(window, "localStorage", {
-        value: storageMock(),
-      });
-    </script>
+      return {
+        setItem: function (key, value) {
+          storage[key] = value || '';
+        },
+        getItem: function (key) {
+          return key in storage ? storage[key] : null;
+        },
+        removeItem: function (key) {
+          delete storage[key];
+        },
+        get length() {
+          return Object.keys(storage).length;
+        },
+        key: function (i) {
+          var keys = Object.keys(storage);
+          return keys[i] || null;
+        }
+      };
+    }
 
-    <script type="module" src="tests.js"></script>
-  </body>
+    Object.defineProperty(window, 'localStorage', {
+      value: storageMock(),
+    });</script>
+
+  <script type="module" src="tests.js"></script>
+</body>
+
 </html>

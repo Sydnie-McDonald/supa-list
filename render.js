@@ -1,14 +1,14 @@
-export function renderCarData(car) {
+export function renderCars(car) {
     const div = document.createElement('div');
     const a = document.createElement('a');
     const img = document.createElement('img');
     const p = document.createElement('p');
 
-    div.classList.add('plane-data');
+    div.classList.add('car-data');
 
-    p.textContent = plane.type;
-    img.src = `./assets/${plane.id}.png`;
-    a.href = `./planesfolder/?id=${plane.id}`;
+    p.textContent = car.type;
+    img.src = `./assets/${car.id}.jpg`;
+    a.href = `./car/?id=${car.id}`;
 
 
     div.append(p, img);
@@ -18,15 +18,14 @@ export function renderCarData(car) {
     return a;
 }
 
-export function renderCars(car) {
+export function renderCarDetails(car) {
     const div = document.createElement('div');
     const brandEl = document.createElement('p');
     const modelEl = document.createElement('p');
     const yearEl = document.createElement('p');
-    const colorEl = document.createElement('p');
-    const colorAndyearEl = document.createElement('div');
+    const img = document.createElement('img');
 
-    div.classList.add('car-lists-container');
+    div.classList.add('car-info-container');
 
     brandEl.textContent = car.brand;
     brandEl.classList.add('brand');
@@ -37,15 +36,8 @@ export function renderCars(car) {
     yearEl.textContent = car.year;
     yearEl.classList.add('year');
 
-    colorEl.textContent = car.color;
-    colorEl.classList.add('color');
+    img.src = `../assets/${car.id}.jpg`;
 
-    colorAndyearEl.classList.add('color-and-year');
-
-    colorAndyearEl.append(colorEl, yearEl);
-
-
-    div.append(brandEl, modelEl, colorAndyearEl);
-
+    div.append(img, brandEl, modelEl, yearEl);
     return div;
 }
